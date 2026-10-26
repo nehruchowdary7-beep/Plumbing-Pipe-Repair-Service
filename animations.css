@@ -1,0 +1,202 @@
+/* Main-content motion is decorative; the shared navigation and footer remain intact. */
+@keyframes page-entrance { from { opacity:.7; transform:translateY(7px); } to { opacity:1; transform:none; } }
+@keyframes headline-entrance { from { opacity:0; transform:translateY(.7em); } to { opacity:1; transform:none; } }
+@keyframes editorial-aura { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(-3%,4%) scale(1.1); } }
+@keyframes decorative-float { 0%,100% { transform:translateY(0) rotate(-6deg); } 50% { transform:translateY(-10px) rotate(4deg); } }
+@keyframes highlight-in { from { opacity:0; transform:translateX(-12px); } to { opacity:1; transform:none; } }
+@keyframes menu-in { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+main { animation:page-entrance .3s ease both; }
+.motion-enabled [data-reveal],.motion-enabled .mini-card,.motion-enabled .compact-service,.motion-enabled .editorial-article { opacity:.08; transform:translateY(20px); transition:opacity .6s ease var(--reveal-delay,0ms),transform .6s cubic-bezier(.2,.65,.25,1) var(--reveal-delay,0ms),clip-path .8s ease; }
+.motion-enabled [data-reveal=left] { transform:translateX(-24px); }
+.motion-enabled [data-reveal=right] { transform:translateX(24px); }
+.motion-enabled [data-reveal=image] { transform:scale(.96); clip-path:inset(0 0 4% 0 round 22px); }
+.motion-enabled .is-revealed { opacity:1 !important; transform:none !important; }
+.motion-enabled [data-reveal=image].is-revealed { clip-path:inset(0 0 0 0 round 22px); }
+.headline-word { display:inline-block; }
+.motion-enabled [data-text-reveal] .headline-word { opacity:0; transform:translateY(.7em); }
+.motion-enabled .is-revealed [data-text-reveal] .headline-word { animation:headline-entrance .65s cubic-bezier(.2,.65,.25,1) var(--word-delay,0ms) both; }
+.feature-photo[data-parallax] { overflow:hidden; }
+.feature-photo[data-parallax] > img { transform:translate3d(0,var(--photo-offset,0px),0) scale(1.06); }
+.feature-section { overflow:clip; }
+.editorial-home .feature-hero { position:relative; isolation:isolate; background:var(--surface-2); }
+.editorial-home .feature-hero::before { content:''; position:absolute; inset:0 0 0 35%; z-index:-1; background:radial-gradient(ellipse at center,var(--hero-wash),transparent 65%); animation:editorial-aura 14s ease-in-out infinite; }
+.editorial-home .feature-hero h1 { font-size:clamp(3rem,5.8vw,5.7rem); letter-spacing:-.055em; }
+.editorial-home .feature-hero .feature-photo { border-radius:120px 22px 22px 22px; box-shadow:var(--shadow); }
+.hero-orbit { position:absolute; width:68px; height:68px; border:1px solid var(--secondary); border-radius:16px; z-index:2; pointer-events:none; animation:decorative-float 7s ease-in-out infinite; }
+.orbit-one { inset-inline-end:25px; top:30px; background:color-mix(in srgb,var(--surface) 80%,transparent); backdrop-filter:blur(8px); }
+.orbit-two { width:35px; height:35px; inset-inline-start:25px; top:55%; animation-delay:-3s; }
+.animated-highlights { display:grid; gap:10px; margin:26px 0; font-size:12px; font-weight:700; color:var(--primary); }
+.editorial-home .is-revealed .animated-highlights span { animation:highlight-in .5s ease both; }
+.editorial-home .is-revealed .animated-highlights span:nth-child(2) { animation-delay:.12s; }
+.editorial-home .is-revealed .animated-highlights span:nth-child(3) { animation-delay:.24s; }
+.editorial-home .is-revealed .feature-body > .button-row { animation:highlight-in .65s ease .3s both; }
+.btn { 
+  transition: transform .28s cubic-bezier(0.16, 1, 0.3, 1), background-color .28s ease, color .28s ease, box-shadow .28s cubic-bezier(0.16, 1, 0.3, 1), border-color .28s ease !important; 
+}
+.btn:hover { 
+  transform: translateY(-3px) scale(1.02) !important; 
+  box-shadow: 0 10px 24px rgba(185, 120, 80, 0.32) !important; 
+}
+.btn:active {
+  transform: translateY(-1px) scale(0.99) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Cards & Blocks Hover Effects (All Pages)
+   -------------------------------------------------------------------------- */
+.panel, 
+.service-card, 
+.compact-service, 
+.mini-card, 
+.editorial-article, 
+.checklist-card, 
+.pricing-plan-card, 
+.more-article-card, 
+.testimonial {
+  transition: transform .32s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow .32s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color .28s ease,
+              background-color .28s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.panel:hover, 
+.service-card:hover, 
+.compact-service:hover, 
+.mini-card:hover, 
+.editorial-article:hover, 
+.checklist-card:hover, 
+.more-article-card:hover, 
+.testimonial:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 18px 38px -8px rgba(20, 92, 96, 0.22) !important;
+}
+
+/* Image Zoom & Lighting on Card Hover */
+.service-card:hover .service-image img,
+.compact-service:hover img,
+.editorial-article:hover img,
+.more-article-card:hover img {
+  transform: scale(1.06) !important;
+  filter: brightness(1.04) !important;
+  transition: transform .65s cubic-bezier(0.16, 1, 0.3, 1), filter .45s ease !important;
+}
+
+.service-card .service-image img,
+.compact-service img,
+.editorial-article img,
+.more-article-card img {
+  transition: transform .65s cubic-bezier(0.16, 1, 0.3, 1), filter .45s ease !important;
+}
+
+/* Feature Photos & Hero Frames Hover */
+.feature-photo {
+  transition: transform .45s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow .45s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color .35s ease !important;
+}
+.feature-photo:hover {
+  transform: translateY(-6px) scale(1.015) !important;
+  box-shadow: 0 24px 50px -10px rgba(20, 92, 96, 0.28) !important;
+}
+.feature-photo > img {
+  transition: transform .75s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.feature-photo:hover > img {
+  transform: scale(1.04) !important;
+}
+
+/* Navigation Links Hover Micro-Interactions */
+.site-nav .nav-link {
+  transition: color .22s ease, transform .22s ease !important;
+}
+.site-nav .nav-link:hover {
+  transform: translateY(-2px);
+  color: var(--secondary-text) !important;
+}
+
+/* Header & Controls Hover */
+.icon-btn, .menu-toggle {
+  transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1), background-color .25s ease, box-shadow .25s ease !important;
+}
+.icon-btn:hover, .menu-toggle:hover {
+  transform: translateY(-2px) scale(1.06) !important;
+}
+
+/* Floating interactive pill chips / badges */
+.animated-highlights span, 
+.article-badge, 
+.article-tab-btn, 
+.photo-rule {
+  transition: transform .28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .28s ease, border-color .28s ease !important;
+}
+.animated-highlights span:hover, 
+.article-tab-btn:hover {
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 8px 18px rgba(185, 120, 80, 0.3) !important;
+  border-color: var(--secondary) !important;
+}
+
+/* Form inputs focus & hover */
+input, select, textarea {
+  transition: border-color .2s ease !important;
+}
+input:hover, select:hover, textarea:hover {
+  border-color: var(--secondary) !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--secondary) !important;
+  box-shadow: none !important;
+}
+
+/* FAQ Details Expand & Hover */
+.faq details {
+  transition: background-color .25s ease, padding .25s ease !important;
+  border-radius: 12px;
+}
+.faq details:hover {
+  background: var(--surface-2);
+  padding-inline: 14px;
+}
+.faq summary {
+  transition: color .2s ease !important;
+}
+.faq summary:hover {
+  color: var(--secondary-text) !important;
+}
+
+/* Footer Links Hover */
+.footer-links a, .legal-links a {
+  transition: color .2s ease, transform .2s ease !important;
+  display: inline-block;
+}
+.footer-links a:hover, .legal-links a:hover {
+  transform: translateX(4px);
+  color: var(--secondary-text) !important;
+}
+html[dir="rtl"] .footer-links a:hover, html[dir="rtl"] .legal-links a:hover {
+  transform: translateX(-4px);
+}
+
+.compact-service img,.editorial-article > img { transition:transform .5s ease; }
+.compact-service:hover img,.editorial-article:hover > img { transform:scale(1.025); }
+.mini-card { transition:transform .2s ease,border-color .2s ease; }
+.mini-card:hover { border-color:var(--secondary); }
+.editorial-details[open] > :not(summary),.editorial-article details[open] p { animation:page-entrance .25s ease both; }
+body,input,select,textarea,.panel { transition:background-color .2s ease,color .2s ease,border-color .2s ease; }
+@view-transition { navigation:auto; }
+::view-transition-old(root) { animation:page-entrance .16s ease reverse both; }
+::view-transition-new(root) { animation:page-entrance .22s ease both; }
+@media(max-width:1280px) { .site-nav.is-open { animation:menu-in .2s ease both; } }
+@media(max-width:991px) { .feature-photo[data-parallax] > img { transform:none; } .editorial-home .feature-hero h1 { font-size:clamp(2.7rem,7vw,4.3rem); } }
+@media(max-width:600px) { .editorial-home .feature-hero h1 { font-size:43px; } .hero-orbit { width:48px; height:48px; } }
+@media print { .motion-enabled [data-reveal],.headline-word,.motion-enabled .mini-card,.motion-enabled .compact-service,.motion-enabled .editorial-article { opacity:1 !important; transform:none !important; clip-path:none !important; } }
+@media(prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto; }
+ *,*::before,*::after { animation:none !important; transition:none !important; }
+ .motion-enabled [data-reveal],.motion-enabled .mini-card,.motion-enabled .compact-service,.motion-enabled .editorial-article,.headline-word { opacity:1 !important; transform:none !important; clip-path:none !important; }
+ .feature-photo[data-parallax] > img,.btn:hover,.compact-service:hover img { transform:none !important; }
+ ::view-transition-old(root),::view-transition-new(root) { animation:none !important; }
+}
+
+.hero-orbit { display:grid; place-items:center; color:var(--primary); }

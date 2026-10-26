@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Now | FlowCare Plumbing &amp; Pipe Repair</title>
+<meta name="description" content="Book Now — thoughtful plumbing care, clear service information and convenient demonstration booking with FlowCare.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script src="config.js"></script><script src="theme.js"></script><script src="validation.js" defer></script><script src="main.js" defer></script><script src="booking.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="animations.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book Now | FlowCare">
+<meta property="og:description" content="Book Now — thoughtful plumbing care, clear service information and convenient demonstration booking with FlowCare.">
+<meta name="theme-color" content="#145C60">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Book Now", "description": "Book Now \u2014 thoughtful plumbing care, clear service information and convenient demonstration booking with FlowCare."}</script><script src="animations.js" defer></script>
+</head>
+<body data-page="book-now.html" class="standalone-booking">
+<div class="booking-preferences" role="group" aria-label="Theme and reading direction">
+<div class="controls">
+<button type="button" class="icon-btn direction-control" title="Switch text direction" aria-label="Switch to right-to-left layout" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18m-4-4l4 4-4 4M21 17H3m4-4l-4 4 4 4"></path></svg></button><button type="button" class="icon-btn theme-control" title="Switch color theme" aria-label="Switch to dark mode" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14a8.3 8.3 0 01-10-10A8.3 8.3 0 1020 14z"></path></svg></button>
+</div>
+</div>
+<main id="main" class="booking-standalone-main"><div class="booking-standalone-card" id="booking">
+<div class="booking-card-top" style="display: flex; justify-content: center; align-items: center; margin-bottom: 28px; padding-bottom: 12px; border-bottom: none;">
+    <a class="brand" href="index.html" aria-label="FlowCare Plumbing and Pipe Repair home" title="Back to Home" style="justify-content: center;">
+        <span class="brand-diamond">
+            <span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2C9 7 5 10 5 15a7 7 0 0014 0c0-5-4-8-7-13z"></path>
+                    <path d="M9 15a3 3 0 003 3"></path>
+                </svg>
+            </span>
+        </span>
+        <span class="brand-type" style="align-items: center; text-align: center;">
+            <span class="brand-name">Flow<span>Care</span></span>
+            <span class="brand-sub">PLUMBING &amp; PIPE REPAIR SERVICE</span>
+        </span>
+    </a>
+</div>
+<p class="eyebrow">FLOWCARE / BOOK YOUR SERVICE</p>
+<h1>Book a plumbing service.</h1>
+<p class="booking-intro">Choose your service and preferred time. Your request is a demonstration and does not confirm a live appointment.</p>
+<form id="booking-form" class="booking-form" data-booking-form data-storage-key="flowcare-request" novalidate>
+<p class="notice">Demonstration form: your request stays on this device. No appointment is sent or confirmed.</p>
+<div class="form-error-summary" role="alert" hidden></div>
+<div class="form-grid">
+<label>Full Name<input name="name" autocomplete="name" required minlength="2" maxlength="100"></label><label>Email Address<input name="email" type="email" autocomplete="email" required maxlength="254"></label><label>Phone Number<input name="phone" type="tel" autocomplete="tel" required maxlength="25" inputmode="tel"></label><label>Service Required<select name="service" required><option value="">Choose a service</option>
+<option value="pipe-repair">Pipe Repair</option>
+<option value="drain-unblocking">Drain Unblocking</option>
+<option value="tap-replacement">Tap Replacement</option>
+<option value="tank-cleaning">Water Tank Cleaning</option></select></label><label>Preferred Date<input name="date" type="date" required></label><label>Preferred Time<select name="time" required><option value="">Choose a time</option>
+<option>Morning · 9 AM–12 PM</option>
+<option>Afternoon · 12 PM–4 PM</option>
+<option>Evening · 4 PM–7 PM</option></select></label><label>Priority<select name="priority"><option value="standard" selected>Standard visit</option>
+<option value="urgent">Urgent callback</option></select></label><label class="full">Service Address<input name="address" autocomplete="street-address" required maxlength="250"></label><label class="full">Problem Description<textarea name="message" rows="4" required minlength="10" maxlength="2000" placeholder="Tell us what needs attention and where it is happening."></textarea></label><label class="full consent"><input name="consent" type="checkbox" required>I understand this is a demonstration request saved locally, not a confirmed booking.</label>
+</div>
+<button class="btn btn-primary" type="submit">Submit Booking <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18L18 6M6 6h12v12"></path></svg></button><p class="form-status" role="status" aria-live="polite"></p>
+<div class="request-actions" hidden>
+<button class="btn btn-outline" data-export-request type="button">Download Request</button><button class="btn btn-outline" data-clear-request type="button">Delete Saved Request</button>
+</div>
+</form>
+</div>
+</main>
+</body>
+</html>

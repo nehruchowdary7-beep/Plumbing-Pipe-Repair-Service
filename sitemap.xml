@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace the reserved demonstration origin with the real business domain before publishing. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://flowcare.example/index.html</loc></url>
+  <url><loc>https://flowcare.example/home2.html</loc></url>
+  <url><loc>https://flowcare.example/about.html</loc></url>
+  <url><loc>https://flowcare.example/services.html</loc></url>
+  <url><loc>https://flowcare.example/blog.html</loc></url>
+  <url><loc>https://flowcare.example/emergency.html</loc></url>
+  <url><loc>https://flowcare.example/pricing.html</loc></url>
+  <url><loc>https://flowcare.example/contact.html</loc></url>
+  <url><loc>https://flowcare.example/book-now.html</loc></url>
+  <url><loc>https://flowcare.example/pipe-repair.html</loc></url>
+  <url><loc>https://flowcare.example/drain-unblocking.html</loc></url>
+  <url><loc>https://flowcare.example/tap-replacement.html</loc></url>
+  <url><loc>https://flowcare.example/tank-cleaning.html</loc></url>
+</urlset>

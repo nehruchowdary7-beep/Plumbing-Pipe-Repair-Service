@@ -1,0 +1,64 @@
+:root,
+[data-theme="light"] {
+  --font-family-base: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bs-font-sans-serif: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bs-body-font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --primary: #145C60;
+  --secondary: #B97850;
+  --bg: #F4F8F7;
+  --surface: #FFFFFF;
+  --surface-2: #E7F0ED;
+  --text: #2E3A36;
+  --muted: #647873;
+  --border: #D7E4E0;
+  --emergency: #C2410C;
+  --shadow: 0 12px 35px rgba(20,92,96,0.08);
+  --radius: 16px;
+  --on-primary: #FFFFFF;
+  --on-secondary: #FFFFFF;
+  --on-emergency: #FFFFFF;
+  --secondary-text: #8F5331;
+  --muted-readable: #536B64;
+  --heading: var(--primary);
+  --hero-wash: rgba(185,120,80,0.10);
+  --photo-overlay: rgba(13,30,32,0.65);
+  --photo-text: #FFFFFF;
+  --focus: var(--primary);
+  --urgent-bg: #145C60;
+  --urgent-text: #FFFFFF;
+  --urgent-muted: #DAE9E5;
+  --ink: var(--text);
+  --line: var(--border);
+  --surface2: var(--surface-2);
+  --accent: var(--secondary);
+  --deep: var(--primary);
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --primary: #69B9B3;
+  --secondary: #D99B73;
+  --bg: #0D1E20;
+  --surface: #1F2D2E;
+  --surface-2: #183134;
+  --text: #F0F6F3;
+  --muted: #A7BDB8;
+  --border: #365052;
+  --emergency: #FF9B67;
+  --shadow: 0 12px 35px rgba(0,0,0,0.30);
+  --radius: 16px;
+  --on-primary: #0D1E20;
+  --on-secondary: #0D1E20;
+  --on-emergency: #0D1E20;
+  --secondary-text: #D99B73;
+  --muted-readable: #A7BDB8;
+  --heading: var(--text);
+  --hero-wash: rgba(217,155,115,0.07);
+  --photo-overlay: rgba(13,30,32,0.65);
+  --photo-text: #FFFFFF;
+  --focus: var(--secondary);
+  --urgent-bg: #183134;
+  --urgent-text: #F0F6F3;
+  --urgent-muted: #A7BDB8;
+  --line: var(--border);
+  color-scheme: dark;
+}

@@ -1,0 +1,5 @@
+# Demonstration site: do not index sample company claims or details.
+# At launch replace with your deliberate production indexing policy.
+User-agent: *
+Disallow: /
+Sitemap: https://flowcare.example/sitemap.xml
