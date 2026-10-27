@@ -6,7 +6,7 @@
   'use strict';
 
   // 1. 3D Card Hover Tilt for Mini Cards & Service Cards
-  const tiltCards = document.querySelectorAll('.compact-service, .mini-card, .review-stack .panel.testimonial');
+  const tiltCards = document.querySelectorAll('.compact-service, .mini-card');
   if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     tiltCards.forEach(card => {
       card.addEventListener('mousemove', e => {

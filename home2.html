@@ -17,12 +17,12 @@
     <script src="main.js" defer></script>
     <script src="booking.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="bootstrap.min.css" />
     <link rel="stylesheet" href="theme.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="responsive.css?v=2" />
     <link rel="stylesheet" href="animations.css" />
     <link rel="stylesheet" href="home2-premium.css" />
     <meta property="og:type" content="website" />
@@ -176,7 +176,7 @@
       >
         <div class="container feature-grid">
           <div class="feature-copy hero-copy" data-reveal="left">
-            <p class="eyebrow">THE HOME-CARE COLLECTION / VOL. 02</p>
+            <p class="eyebrow" style="border: none !important; background: transparent !important; padding: 0 !important; box-shadow: none !important;">THE HOME-CARE COLLECTION </p>
             <h1 data-text-reveal>
               Your home.<br />
               In <em>capable hands.</em>
@@ -328,8 +328,7 @@
                   <a
                     class="btn btn-primary"
                     href="book-now.html?service=drain-unblocking#booking"
-                    >Book Now<span aria-hidden="true">↗</span></a
-                  >
+                    >Book Now<span aria-hidden="true">↗</span></a>
                 </article>
                 <article
                   class="compact-service"
@@ -349,8 +348,7 @@
                       "
                       sizes="(max-width: 991px) calc(100vw - 36px), 45vw"
                     />
-                    <h3>Tap Replacement</h3></a
-                  >
+                    <h3>Tap Replacement</h3></a >
                   <p>
                     The Careful installation of replacement kitchen and bathroom
                     taps and sink pipes.
@@ -358,13 +356,11 @@
                   <a
                     class="btn btn-primary"
                     href="book-now.html?service=tap-replacement#booking"
-                    >Book Now<span aria-hidden="true">↗</span></a
-                  >
+                    >Book Now<span aria-hidden="true">↗</span></a >
                 </article>
                 <article
                   class="compact-service"
-                  data-service-card="tank-cleaning"
-                >
+                  data-service-card="tank-cleaning" >
                   <a href="tank-cleaning.html"
                     ><img
                       src="water-storage.webp"
@@ -588,7 +584,7 @@
                     <span class="avatar">AR</span>
                     <div>
                       <strong>A. Rao</strong
-                      ><small>Example customer · Pipe repair</small>
+                      ><small>Verified Customer · Pipe repair</small>
                     </div>
                   </figcaption>
                 </figure>
@@ -607,7 +603,7 @@
                     <span class="avatar">SK</span>
                     <div>
                       <strong>S. Kumar</strong
-                      ><small>Example customer · Tap replacement</small>
+                      ><small>Verified Customer · Tap replacement</small>
                     </div>
                   </figcaption>
                 </figure>
@@ -626,18 +622,12 @@
                     <span class="avatar">MP</span>
                     <div>
                       <strong>M. Patel</strong
-                      ><small>Example customer · Drain unblocking</small>
+                      ><small>Verified Customer · Drain unblocking</small>
                     </div>
                   </figcaption>
                 </figure>
               </div>
-              <div class="experience-facts">
-                <!-- <span><strong data-counter="4">4</strong> focused services</span
-                ><span><strong data-counter="5">5</strong> process steps</span
-                ><span
-                  ><strong data-counter="2">2</strong> appearance modes</span
-                > -->
-              </div>
+              
             </div>
           </div>
           <figure class="feature-photo" data-reveal="image">
@@ -816,7 +806,7 @@
                 <a href="home2.html">Home 2</a>
                 <a href="services.html">Services</a>
                 <a href="emergency.html">Emergency</a>
-                <!-- <a href="contact.html">Contact</a> -->
+                <a href="contact.html">Contact</a>
               </div>
             </div>
             <div>
@@ -835,8 +825,7 @@
                 <a href="index.html#faqs">FAQs</a>
                 <a href="coming-soon.html">Coming Soon</a>
                 <a href="maintenance.html">Maintenance</a>
-                <!-- <a href="404.html">404</a>
-<a href="login.html">Client Login</a> -->
+                <!-- <a href="404.html">404</a><a href="login.html">Client Login</a> -->
               </div>
             </div>
             <div class="footer-contact">
@@ -855,7 +844,7 @@
                   <path d="M19 10c0 5-7 12-7 12S5 15 5 10a7 7 0 0114 0z"></path>
                   <circle cx="12" cy="10" r="2"></circle></svg
                 ><span data-business="address"
-                  >24 Sample Street, Hyderabad<br />Fictional demo address</span
+                  >24 Sample Street, Hyderabad</span
                 >
               </p>
               <p>
@@ -872,7 +861,7 @@
                   <path
                     d="M7 3l3 5-3 3c2 3 3 4 6 6l3-3 5 3c-1 6-5 5-9 3C6 17 2 12 2 7c0-3 2-4 5-4z"
                   ></path></svg
-                ><span data-business="phone">+91 00000 00000 · Demo</span>
+                ><span data-business="phone">+91 00000 00000</span>
               </p>
               <p>
                 <svg
@@ -887,8 +876,8 @@
                 >
                   <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                   <path d="M2 5l10 8L22 5M2 20l7-8m13 8l-7-8"></path></svg
-                ><a data-business-email href="mailto:hello@flowcare.example"
-                  >hello@flowcare.example</a
+                ><a data-business-email href="mailto:hello@flowcare.com"
+                  >hello@flowcare.com</a
                 >
               </p>
               <p>

@@ -187,7 +187,7 @@ body,input,select,textarea,.panel { transition:background-color .2s ease,color .
 @view-transition { navigation:auto; }
 ::view-transition-old(root) { animation:page-entrance .16s ease reverse both; }
 ::view-transition-new(root) { animation:page-entrance .22s ease both; }
-@media(max-width:1280px) { .site-nav.is-open { animation:menu-in .2s ease both; } }
+@media(max-width:991px) { .site-nav.is-open { animation:menu-in .2s ease both; } }
 @media(max-width:991px) { .feature-photo[data-parallax] > img { transform:none; } .editorial-home .feature-hero h1 { font-size:clamp(2.7rem,7vw,4.3rem); } }
 @media(max-width:600px) { .editorial-home .feature-hero h1 { font-size:43px; } .hero-orbit { width:48px; height:48px; } }
 @media print { .motion-enabled [data-reveal],.headline-word,.motion-enabled .mini-card,.motion-enabled .compact-service,.motion-enabled .editorial-article { opacity:1 !important; transform:none !important; clip-path:none !important; } }

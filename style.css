@@ -85,9 +85,9 @@ html[data-theme=dark] em{background:none!important;color:inherit}
 .nav-link:hover:after,.nav-link[aria-current=page]:after{transform:scaleX(1)}
 .header-actions{display:flex;align-items:center;gap:8px}
 .controls{display:flex;gap:5px}
-.icon-btn,.menu-toggle{min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.icon-btn{min-width:44px;min-height:44px;border:2px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer}
 .icon-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}
-.menu-toggle{display:none;border-radius:10px;font-size:22px}
+.menu-toggle{min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);display:none;place-items:center;cursor:pointer;font-size:22px}
 .btn{border-radius:7px;padding:14px 21px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:22px;border:1px solid transparent;min-height:48px;transition:transform .2s,background .2s;line-height:1.4}
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -290,9 +290,9 @@ html[data-theme=dark] .hero em { color: var(--secondary); }
 }
 .header-actions { gap: 12px; }
 .controls { gap: 8px; }
-.icon-btn, .menu-toggle { 
+.icon-btn { 
     border-radius: 13px; 
-    border: 1px solid var(--border); 
+    border: 2px solid var(--border); 
     width: 46px; 
     min-width: 46px; 
     min-height: 46px; 
@@ -302,6 +302,42 @@ html[data-theme=dark] .hero em { color: var(--secondary); }
     place-items: center; 
     cursor: pointer; 
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.direction-control,
+.theme-control {
+    border: 2px solid var(--border);
+}
+/* Ensure increased border thickness persists across RTL, Dark, and Light themes */
+[dir="rtl"] .direction-control,
+[dir="rtl"] .theme-control,
+[data-theme="dark"] .direction-control,
+[data-theme="dark"] .theme-control,
+[data-theme="light"] .direction-control,
+[data-theme="light"] .theme-control {
+    border-width: 2px;
+}
+.menu-toggle { 
+    display: none !important; 
+    border-radius: 13px; 
+    border: 1px solid var(--border); 
+    width: 46px; 
+    min-width: 46px; 
+    min-height: 46px; 
+    color: var(--text); 
+    background: var(--surface); 
+    place-items: center; 
+    cursor: pointer; 
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+@media (min-width: 992px) {
+    .menu-toggle {
+        display: none !important;
+    }
+}
+@media (min-width: 1024px) {
+    .menu-toggle {
+        display: none !important;
+    }
 }
 .icon-btn:hover,
 .direction-control:hover,
@@ -468,6 +504,8 @@ html[dir=rtl] .hero-visual { border-radius: 24px 100px 24px 24px; }
 .emergency-section h2, .emergency-section h3, .emergency-hero h1 { color: var(--urgent-text); }
 .emergency-section p, .emergency-hero p { color: var(--urgent-muted); }
 .emergency-section .eyebrow, .emergency-hero .eyebrow { color: var(--urgent-muted); }
+.emergency-feature .eyebrow { color: var(--secondary) !important; }
+
 .emergency-banner { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
 .emergency-banner p { max-width: 710px; }
 .emergency-banner .btn { flex-shrink: 0; }
@@ -911,51 +949,73 @@ main .btn-outline[aria-current=true] { background: var(--secondary); color: #fff
 .standard-cta-shell { 
     display: flex !important; 
     flex-direction: column !important;
-    align-items: center !important; 
+    align-items: flex-start !important; 
     justify-content: center !important;
-    text-align: center !important;
+    text-align: left !important;
+    text-align: start !important;
     position: relative !important;
     overflow: hidden !important; 
     border-radius: 28px !important; 
     border: 1px solid rgba(255, 255, 255, 0.2) !important; 
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28) !important; 
-    padding: clamp(52px, 6.5vw, 84px) clamp(24px, 5vw, 64px) !important;
+    padding: clamp(52px, 6.5vw, 84px) clamp(32px, 6vw, 84px) !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     isolation: isolate !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    background-image: 
-      linear-gradient(
-        135deg, 
-        rgba(8, 28, 30, 0.88) 0%, 
-        rgba(14, 48, 51, 0.82) 50%, 
-        rgba(10, 24, 26, 0.90) 100%
-      ),
-      url('plumber.webp') !important;
+    background: linear-gradient(135deg, #091f21 0%, #145C60 50%, #081719 100%) !important;
+    background-image: linear-gradient(135deg, #091f21 0%, #145C60 50%, #081719 100%) !important;
 }
 
 /* Page-specific distinct background images */
 body[data-page="index.html"] .standard-cta-shell {
     background-image: 
       linear-gradient(135deg, rgba(8, 28, 30, 0.88) 0%, rgba(14, 48, 51, 0.82) 50%, rgba(10, 24, 26, 0.90) 100%),
-      url('plumber.webp') !important;
+      url('technician-work.webp') !important;
     background-position: center 30% !important;
 }
 
-body[data-page="home2.html"] .standard-cta-shell {
-    background-image: 
-      linear-gradient(135deg, rgba(8, 28, 30, 0.88) 0%, rgba(14, 48, 51, 0.82) 50%, rgba(10, 24, 26, 0.90) 100%),
-      url('Considered plumbing care.jpg') !important;
-    background-position: center center !important;
+body[data-page="home2.html"] .standard-cta-shell,
+body[data-page="home-2.html"] .standard-cta-shell {
+    background: linear-gradient(135deg, #091f21 0%, #145C60 50%, #081719 100%) !important;
+    background-image: linear-gradient(135deg, #091f21 0%, #145C60 50%, #081719 100%) !important;
 }
 
 body[data-page="about.html"] .standard-cta-shell {
     background-image: 
       linear-gradient(135deg, rgba(8, 28, 30, 0.88) 0%, rgba(14, 48, 51, 0.82) 50%, rgba(10, 24, 26, 0.90) 100%),
-      url('technician in aboutpage.jpg') !important;
+      url('plumber.webp') !important;
     background-position: center 25% !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+body[data-page="about.html"] .standard-cta-copy {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+body[data-page="about.html"] .standard-cta .eyebrow,
+body[data-page="about.html"] .standard-cta-copy .eyebrow {
+    align-self: center !important;
+    justify-content: center !important;
+    margin: 0 auto 16px auto !important;
+}
+body[data-page="about.html"] .standard-cta h2,
+body[data-page="about.html"] .standard-cta-copy h2 {
+    text-align: center !important;
+    margin: 0 auto 16px auto !important;
+}
+body[data-page="about.html"] .standard-cta p,
+body[data-page="about.html"] .standard-cta-copy p {
+    text-align: center !important;
+    margin: 0 auto 28px auto !important;
+}
+body[data-page="about.html"] .standard-cta .button-row,
+body[data-page="about.html"] .standard-cta-copy .button-row {
+    justify-content: center !important;
+    margin: 0 auto !important;
 }
 
 body[data-page="services.html"] .standard-cta-shell {
@@ -966,10 +1026,36 @@ body[data-page="services.html"] .standard-cta-shell {
 }
 
 body[data-page="blog.html"] .standard-cta-shell {
-    background-image: 
-      linear-gradient(135deg, rgba(8, 28, 30, 0.88) 0%, rgba(14, 48, 51, 0.82) 50%, rgba(10, 24, 26, 0.90) 100%),
-      url('Prepare for a repair pipeblog3.jpg') !important;
-    background-position: center center !important;
+    background: linear-gradient(135deg, #091f21 0%, #145C60 50%, #081719 100%) !important;
+    background-image: linear-gradient(135deg, #091f21 0%, #145C60 50%, #081719 100%) !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+body[data-page="blog.html"] .standard-cta-copy {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+body[data-page="blog.html"] .standard-cta .eyebrow,
+body[data-page="blog.html"] .standard-cta-copy .eyebrow {
+    align-self: center !important;
+    justify-content: center !important;
+    margin: 0 auto 16px auto !important;
+}
+body[data-page="blog.html"] .standard-cta h2,
+body[data-page="blog.html"] .standard-cta-copy h2 {
+    text-align: center !important;
+    margin: 0 auto 16px auto !important;
+}
+body[data-page="blog.html"] .standard-cta p,
+body[data-page="blog.html"] .standard-cta-copy p {
+    text-align: center !important;
+    margin: 0 auto 28px auto !important;
+}
+body[data-page="blog.html"] .standard-cta .button-row,
+body[data-page="blog.html"] .standard-cta-copy .button-row {
+    justify-content: center !important;
+    margin: 0 auto !important;
 }
 
 body[data-page="blog-details.html"] .standard-cta-shell {
@@ -992,12 +1078,18 @@ body[data-page="pricing.html"] .standard-cta-shell {
       url('Care for your home page img.jpg') !important;
     background-position: center 30% !important;
 }
+body[data-page="pricing.html"] .standard-cta h2,
+body[data-page="pricing.html"] .standard-cta-copy h2 {
+    color: var(--secondary) !important;
+}
 
 body[data-page="contact.html"] .standard-cta-shell {
     background-image: 
-      linear-gradient(135deg, rgba(8, 28, 30, 0.88) 0%, rgba(14, 48, 51, 0.82) 50%, rgba(10, 24, 26, 0.90) 100%),
+      linear-gradient(to right, rgba(8, 28, 30, 0.95) 0%, rgba(8, 28, 30, 0.82) 48%, rgba(10, 24, 26, 0.40) 100%),
       url('plumbing contactpage location.jpg') !important;
-    background-position: center 25% !important;
+    background-position: right center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 
 body[data-page="pipe-repair.html"] .standard-cta-shell {
@@ -1052,15 +1144,19 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
 .standard-cta-copy { 
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: left !important;
+    text-align: start !important;
     width: 100% !important;
-    max-width: 780px !important;
-    margin: 0 auto !important;
+    max-width: 1050px !important;
+    margin: 0 !important;
     padding: 0 !important; 
     position: relative !important; 
     z-index: 2 !important;
 }
+
+
 
 .standard-cta .eyebrow,
 .standard-cta-copy .eyebrow {
@@ -1072,7 +1168,7 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
     text-transform: uppercase !important;
     display: inline-flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     gap: 8px !important;
     background: rgba(255, 255, 255, 0.12) !important;
     backdrop-filter: blur(8px) !important;
@@ -1080,7 +1176,7 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
     border: 1px solid rgba(255, 255, 255, 0.24) !important;
     padding: 7px 20px !important;
     border-radius: 999px !important;
-    margin: 0 auto 16px auto !important;
+    margin: 0 0 16px 0 !important;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -1088,13 +1184,23 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
 .standard-cta-copy h2 { 
     font-family: 'Manrope', sans-serif !important;
     color: #ffffff !important; 
-    margin: 0 auto 16px auto !important; 
-    font-size: clamp(2.2rem, 3.8vw, 3.2rem) !important; 
+    margin: 0 0 16px 0 !important; 
+    font-size: clamp(1.8rem, 3.2vw, 3rem) !important; 
     font-weight: 800 !important;
     line-height: 1.2 !important; 
     letter-spacing: -0.035em !important;
     text-shadow: 0 3px 20px rgba(0, 0, 0, 0.45) !important;
-    max-width: 700px !important;
+    max-width: 1000px !important;
+    width: 100% !important;
+    text-align: left !important;
+    text-align: start !important;
+}
+
+@media (min-width: 768px) {
+    .standard-cta h2,
+    .standard-cta-copy h2 {
+        white-space: nowrap !important;
+    }
 }
 
 .standard-cta p,
@@ -1104,8 +1210,10 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
     font-size: clamp(15px, 1.2vw, 17.5px) !important; 
     font-weight: 400 !important;
     line-height: 1.72 !important; 
-    margin: 0 auto 28px auto !important;
-    max-width: 620px !important;
+    margin: 0 0 28px 0 !important;
+    max-width: 660px !important;
+    text-align: left !important;
+    text-align: start !important;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4) !important;
 }
 
@@ -1113,9 +1221,9 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
 .standard-cta-copy .button-row {
     display: flex !important;
     flex-wrap: wrap !important;
-    justify-content: center !important; 
+    justify-content: flex-start !important; 
     align-items: center !important;
-    margin: 0 auto !important; 
+    margin: 0 !important; 
     gap: 16px !important; 
     width: 100% !important;
 }
@@ -1194,28 +1302,37 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
 .card-grid.square-cards-grid {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 14px !important;
+    gap: 16px !important;
     margin-top: 18px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
 }
 .square-card {
     background: var(--surface) !important;
     border: 1.5px solid var(--border) !important;
-    border-radius: 12px !important;
-    padding: 16px 14px !important;
-    aspect-ratio: 1 / 1 !important;
+    border-radius: 14px !important;
+    padding: 20px 18px !important;
+    aspect-ratio: unset !important;
+    min-height: 140px !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
     align-items: flex-start !important;
+    gap: 8px !important;
     box-sizing: border-box !important;
     transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
     position: relative !important;
     overflow: hidden !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
 }
 .square-card:hover {
     transform: translateY(-3px) !important;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
     border-color: var(--secondary) !important;
+    background: var(--surface) !important;
 }
 .square-card .step {
     width: 28px !important;
@@ -1230,20 +1347,20 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
     background: var(--surface2) !important;
     display: grid !important;
     place-items: center !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 2px !important;
     flex-shrink: 0 !important;
 }
 .square-card h3 {
-    font-size: 13.5px !important;
+    font-size: 14px !important;
     font-weight: 750 !important;
     color: var(--text) !important;
-    margin: 0 0 4px 0 !important;
+    margin: 0 !important;
     line-height: 1.25 !important;
 }
 .square-card p {
-    font-size: 11px !important;
+    font-size: 11.5px !important;
     color: var(--muted-readable) !important;
-    line-height: 1.35 !important;
+    line-height: 1.4 !important;
     margin: 0 !important;
 }
 .preserved-content .detail-grid { grid-template-columns: 1fr; }
@@ -1437,8 +1554,24 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
 .booking-preferences { position: absolute; inset-block-start: 24px; inset-inline-end: 28px; z-index: 2; }
 .booking-standalone-main { width: 100%; padding: 100px 24px 50px; }
 .booking-standalone-card { max-width: 840px; margin-inline: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: clamp(24px,4vw,48px); box-shadow: var(--shadow); }
-.booking-standalone-card h1 { font-size: clamp(2rem,4vw,3rem); margin: 18px 0; line-height: 1.2; }
-.booking-intro { font-size: 14px; line-height: 1.8; margin-bottom: 26px; }
+.booking-standalone-card .eyebrow {
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto 16px auto !important;
+}
+.booking-standalone-card h1 {
+    font-size: clamp(2rem,4vw,3rem);
+    margin: 18px auto !important;
+    line-height: 1.2;
+    text-align: center !important;
+}
+.booking-intro {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0 auto 26px auto !important;
+    text-align: center !important;
+    max-width: 640px !important;
+}
 .booking-standalone-card .booking-form,
 .booking-standalone-card .booking-form:hover { padding: 0; border: 0 !important; outline: none !important; background: transparent !important; box-shadow: none !important; transform: none !important; }
 .booking-standalone-card:hover { border-color: var(--border) !important; outline: none !important; }
@@ -1468,23 +1601,36 @@ body[data-page="coming-soon.html"] .standard-cta-shell {
     overflow: hidden;
 }
 .pricing-plans-head {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 52px;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 760px !important;
+    margin: 0 auto 52px auto !important;
 }
 .pricing-plans-head .eyebrow {
-    margin-bottom: 12px;
-    letter-spacing: 1.8px;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto 14px auto !important;
+    letter-spacing: 1.8px !important;
 }
 .pricing-plans-head h2 {
-    font-size: clamp(2rem, 3.4vw, 3.2rem);
-    line-height: 1.18;
-    margin-bottom: 16px;
+    font-size: clamp(2rem, 3.4vw, 3.2rem) !important;
+    line-height: 1.18 !important;
+    text-align: center !important;
+    margin: 0 auto 16px auto !important;
+    max-width: 760px !important;
 }
 .pricing-plans-head p {
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--muted-readable);
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    color: var(--muted-readable) !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 680px !important;
 }
 .pricing-cards-grid {
     display: grid;
