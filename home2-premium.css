@@ -490,17 +490,10 @@ body.editorial-home main#main {
   color: var(--secondary-text);
 }
 
-.editorial-home .eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 2px;
-  background: var(--secondary);
-  border-radius: 2px;
-}
-
+.editorial-home .eyebrow::before,
 .editorial-home .eyebrow::after {
   display: none !important;
+  content: none !important;
 }
 
 .editorial-home h1,
